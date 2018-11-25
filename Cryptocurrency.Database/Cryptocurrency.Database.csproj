@@ -2,12 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Cryptocurrency</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiteDB" Version="4.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Cryptocurrency.Blockchain\Cryptocurrency.Blockchain.csproj" />
-    <ProjectReference Include="..\Cryptocurrency.Database\Cryptocurrency.Database.csproj" />
+    <ProjectReference Include="..\Cryptocurrency.Globals\Cryptocurrency.Globals.csproj" />
   </ItemGroup>
 
 </Project>

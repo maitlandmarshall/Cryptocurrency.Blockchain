@@ -4,7 +4,7 @@ namespace Cryptocurrency.Globals
 {
     public class Keys
     {
-        public const string GenesisPrivateKey = "OupeaZ2YtrstWv7dI1sbVXU3uspkrHG/2750tPmLBYE=";
-        public const string GenesisPublicKey = "d9f64eb557745a11d0260ae7ca42b7b6c125fef98756574ecd7b6b8c95cab4fa";
+        public const string GenesisPrivateKey = "2FpQiz55KH6tpsGES5nA6HJ2KpXibA2tuuhDu2pW5irU";
+        public const string GenesisPublicKey = "Qe1oZcw7U8k1FG7Vt8RTgfvysBgpqapNW1pna7X3D4iRab7EVGNxnJwMUZrqL1jJV2psGj3xQJZgaifKaf9F4S2f";
     }
 }

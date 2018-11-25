@@ -1,5 +1,6 @@
-﻿using Cryptocurrency.Blockchain.Factories;
-using Cryptocurrency.Cryptography;
+﻿using Cryptocurrency.Cryptography;
+using Cryptocurrency.Database.Factories;
+using Cryptocurrency.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,12 @@ namespace Cryptocurrency.Blockchain.Tests
         [TestMethod]
         public void FromGenesisPoW()
         {
-            EcdsaKeyPair genesisWalletKp = new EcdsaKeyPair(Convert.FromBase64String(Globals.Keys.GenesisPrivateKey));
+            Core core = new Core();
+
+            EcdsaKeyPair genesisWalletKp = new EcdsaKeyPair(Globals.Keys.GenesisPrivateKey);
             EcdsaKeyPair otherKp = new EcdsaKeyPair();
 
-            Database db = Database.Instance();
-
-            Block genesis = BlockFactory.GenesisBlock();
-            db.Blocks.Add(genesis);
-            db.Transactions.Add(genesis.Transactions.FirstOrDefault());
+            Block genesis = core.GenesisBlock;
 
             // find nonce for nextBlock
             Regex difficultyTestRegex = new Regex(genesis.DifficultyMask);
@@ -50,12 +49,11 @@ namespace Cryptocurrency.Blockchain.Tests
             });
 
             nextTransaction.Sign(genesisWalletKp.Private);
-            db.Transactions.Add(nextTransaction);
 
             nextBlock.Nonce = testNonce;
             nextBlock.Transactions.Add(nextTransaction);
 
-            nextBlock.ValidateBlock();
+            BlockValidatorService.ValidateBlock(nextBlock);
         }
     }
 }

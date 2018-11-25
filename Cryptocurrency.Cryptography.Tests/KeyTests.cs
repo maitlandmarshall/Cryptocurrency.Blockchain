@@ -45,10 +45,10 @@ namespace Cryptocurrency.Cryptography.Tests
         [TestMethod]
         public void RestoreGenesisKey()
         {
-            EcdsaKeyPair genesis = new EcdsaKeyPair(Convert.FromBase64String(Globals.Keys.GenesisPrivateKey));
+            EcdsaKeyPair genesis = new EcdsaKeyPair(Globals.Keys.GenesisPrivateKey);
 
             Assert.AreEqual(genesis.Private.ToString(), Globals.Keys.GenesisPrivateKey);
-            Assert.AreEqual(Sha256Hash.Hash(genesis.Public), Globals.Keys.GenesisPublicKey);
+            Assert.AreEqual(genesis.Public.ToString(), Globals.Keys.GenesisPublicKey);
         }
 
 

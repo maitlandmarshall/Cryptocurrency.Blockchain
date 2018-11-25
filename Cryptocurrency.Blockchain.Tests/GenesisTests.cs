@@ -1,4 +1,4 @@
-﻿using Cryptocurrency.Blockchain.Factories;
+﻿using Cryptocurrency.Database.Factories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

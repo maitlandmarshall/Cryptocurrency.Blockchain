@@ -23,9 +23,15 @@ namespace Cryptocurrency.Cryptography
             return key.Data;
         }
 
+        public static implicit operator PublicKey (string key)
+        {
+            byte[] data = Base58.FromBase58String(key);
+            return new PublicKey { Data = data };
+        }
+
         public override string ToString()
         {
-            return Convert.ToBase64String(this);
+            return Base58.ToBase58String(this);
         }
     }
 
@@ -43,9 +49,15 @@ namespace Cryptocurrency.Cryptography
             return key.Data;
         }
 
+        public static implicit operator PrivateKey (string key)
+        {
+            byte[] data = Base58.FromBase58String(key);
+            return new PrivateKey { Data = data };
+        }
+
         public override string ToString()
         {
-            return Convert.ToBase64String(this);
+            return Base58.ToBase58String(this);
         }
     }
 }

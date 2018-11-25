@@ -23,12 +23,14 @@ namespace Cryptocurrency.Blockchain
             set => this.hash = value;
         }
 
-        public string PreviousBlockHash { get; internal set; }
+        public string PreviousBlockHash { get; set; }
         public UInt16 Nonce { get; set; }
         public string DifficultyMask { get; set; }
 
-        public DateTime Date { get; internal set; }
-        public List<Transaction> Transactions { get; internal set; }
+        public DateTime Date { get; set; }
+        public List<Transaction> Transactions { get; set; }
+
+        public uint BlockIndex { get; set; }
 
         public Block()
         {
@@ -46,23 +48,6 @@ namespace Cryptocurrency.Blockchain
             }
 
             return Sha256Hash.Hash(allBytes.ToArray());
-        }
-
-        public void ValidateBlock()
-        {
-            // first validate the Nonce matches the difficulty mask
-            string mineHash = Sha256Hash.Hash(BitConverter.GetBytes(this.Nonce), this.PreviousBlockHash);
-
-            if (!Regex.IsMatch(mineHash, this.DifficultyMask))
-            {
-                throw new Exception("Nonce does not match difficulty mask");
-            }
-
-            for (int i = 0; i < this.Transactions.Count; i++)
-            {
-                Transaction t = this.Transactions[i];
-                t.ValidateTransaction();
-            }
         }
     }
 }
