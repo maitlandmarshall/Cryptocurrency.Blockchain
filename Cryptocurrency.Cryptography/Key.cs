@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Cryptocurrency.Cryptography
@@ -9,8 +10,10 @@ namespace Cryptocurrency.Cryptography
         byte[] Data { get; }
     }
 
+    [DataContract]
     public struct PublicKey : IKey
     {
+        [DataMember(Order = 1)]
         public byte[] Data { get; internal set; }
 
         public static implicit operator PublicKey (byte[] bytes)

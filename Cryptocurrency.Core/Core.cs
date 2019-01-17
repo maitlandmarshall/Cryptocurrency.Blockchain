@@ -7,6 +7,8 @@ namespace Cryptocurrency
     public class Core
     {
         public Block GenesisBlock { get; private set; }
+
+        
         
         public Core()
         {

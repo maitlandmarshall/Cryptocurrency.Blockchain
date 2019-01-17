@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cryptocurrency.Core.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cryptocurrency.Database", "Cryptocurrency.Database\Cryptocurrency.Database.csproj", "{84C4BBD0-99D3-404B-A899-ACD8332DA25E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptocurrency.Consensus.DPoW", "Cryptocurrency.Consensus.DPoW\Cryptocurrency.Consensus.DPoW.csproj", "{5C30F3C6-45DD-4006-8E4A-DAEE292F29A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptocurrency.Consensus.Tests", "Cryptocurrency.Consensus.Tests\Cryptocurrency.Consensus.Tests.csproj", "{1D492EDB-35CE-4BFB-940A-334258DC6E9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,10 +73,10 @@ Global
 		{84C4BBD0-99D3-404B-A899-ACD8332DA25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84C4BBD0-99D3-404B-A899-ACD8332DA25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84C4BBD0-99D3-404B-A899-ACD8332DA25E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C30F3C6-45DD-4006-8E4A-DAEE292F29A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C30F3C6-45DD-4006-8E4A-DAEE292F29A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C30F3C6-45DD-4006-8E4A-DAEE292F29A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C30F3C6-45DD-4006-8E4A-DAEE292F29A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D492EDB-35CE-4BFB-940A-334258DC6E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D492EDB-35CE-4BFB-940A-334258DC6E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D492EDB-35CE-4BFB-940A-334258DC6E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D492EDB-35CE-4BFB-940A-334258DC6E9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
